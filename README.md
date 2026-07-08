@@ -5,7 +5,7 @@ Site vitrine statique (HTML/CSS/JS) pour le serveur Minecraft **Valéa**.
 ## Publier sur GitHub Pages
 
 1. Va sur ton dépôt : https://github.com/MrTheLopin/Miencraft-Valea
-2. Mets tous les fichiers de ce dossier (`index.html`, `mods.html`, `style.css`, `script.js`, `mods.js`, `assets/hero.png`, ce `README.md`) à la racine du dépôt.
+2. Mets tous les fichiers de ce dossier (`index.html`, `mods.html`, `style.css`, `mods.js`, `assets/hero.png`, ce `README.md`) à la racine du dépôt.
    - Sur github.com : clique **Add file > Upload files**, glisse les fichiers, puis **Commit changes**.
    - Ou en ligne de commande depuis ce dossier :
      ```bash
