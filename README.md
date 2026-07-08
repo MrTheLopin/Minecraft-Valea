@@ -1,38 +1,108 @@
-# Site de Valéa
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valéa — Serveur Minecraft moddé chill</title>
+<meta name="description" content="Valéa, un serveur Minecraft moddé chill et cozy. Build mignon, communauté bienveillante, ambiance douce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-Site vitrine statique (HTML/CSS/JS) pour le serveur Minecraft **Valéa**.
+  <header class="hero">
+    <div class="hero-frame">
+      <img src="assets/hero.png" alt="Valéa, un serveur chill sans prise de tête" class="hero-img">
+      <span class="petal petal-1">🌸</span>
+      <span class="petal petal-2">🌸</span>
+      <span class="petal petal-3">🌸</span>
+      <span class="petal petal-4">🌸</span>
+      <span class="petal petal-5">🌸</span>
+    </div>
+  </header>
 
-## Publier sur GitHub Pages
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M0 10 Q 25 0, 50 10 T 100 10 T 150 10 T 200 10" /></svg>
+    <span class="divider-icon">✿</span>
+  </div>
 
-1. Va sur ton dépôt : https://github.com/MrTheLopin/Miencraft-Valea
-2. Mets tous les fichiers de ce dossier (`index.html`, `style.css`, `script.js`, `assets/hero.png`, ce `README.md`) à la racine du dépôt.
-   - Sur github.com : clique **Add file > Upload files**, glisse les fichiers, puis **Commit changes**.
-   - Ou en ligne de commande depuis ce dossier :
-     ```bash
-     git init
-     git remote add origin https://github.com/MrTheLopin/Miencraft-Valea.git
-     git add .
-     git commit -m "Site Valéa"
-     git branch -M main
-     git push -u origin main
-     ```
-3. Dans le dépôt, va dans **Settings > Pages**.
-4. Sous **Build and deployment > Source**, choisis **Deploy from a branch**.
-5. Sous **Branch**, choisis `main` et le dossier `/ (root)`, puis **Save**.
-6. Après 1 à 2 minutes, le site sera en ligne à cette adresse :
-   **https://MrTheLopin.github.io/Miencraft-Valea/**
+  <main>
 
-## Modifier le contenu
+    <section class="intro">
+      <span class="eyebrow">✿ à propos ✿</span>
+      <p class="intro-text">
+        Bienvenue sur <strong>Valéa</strong>, un serveur moddé où le temps ralentit.
+        Ici on construit sans pression, on explore en douceur et on partage de bons
+        moments entre ami·e·s. Pose ton sac, on t'attendait.
+      </p>
+    </section>
 
-- **Texte de présentation** : dans `index.html`, section `<section class="intro">`.
-- **Adresse IP** : dans `index.html`, l'élément `<code id="server-ip">`.
-- **Liens Discord / modpack** : dans `index.html`, section `<section class="steps">`.
-- **Couleurs** : tout en haut de `style.css`, dans le bloc `:root { ... }`.
+    <section class="connect" aria-label="Rejoindre le serveur">
+      <div class="connect-card">
+        <span class="connect-label">Adresse du serveur</span>
+        <div class="ip-row">
+          <code id="server-ip">KimoMinecraft.kinetichosting.gg</code>
+          <button id="copy-btn" type="button" aria-label="Copier l'adresse">Copier</button>
+        </div>
+        <span class="connect-sub">Java Edition · Moddé</span>
+      </div>
+    </section>
 
-## Autres idées de texte de présentation
+    <section class="features" aria-label="Ce qui fait Valéa">
+      <h2 class="section-title">Ce qui fait Valéa</h2>
+      <div class="signs">
+        <div class="sign"><span class="sign-icon">🌸</span><span>Build et Mignon</span></div>
+        <div class="sign"><span class="sign-icon">🍃</span><span>Communauté bienveillante</span></div>
+        <div class="sign"><span class="sign-icon">☕</span><span>Ambiance Chill et cozy</span></div>
+        <div class="sign"><span class="sign-icon">🐱</span><span>Événements détendus</span></div>
+        <div class="sign"><span class="sign-icon">✨</span><span>Respect, fun et good vibes</span></div>
+      </div>
+    </section>
 
-Trois variantes si tu veux changer le paragraphe d'intro :
+    <section class="steps" aria-label="Comment rejoindre">
+      <h2 class="section-title">Comment nous rejoindre</h2>
+      <ol class="step-list">
+        <li>
+          <span class="step-num">1</span>
+          <div>
+            <h3>Rejoins le Discord</h3>
+            <p>C'est là que ça se passe : annonces, entraide et bonne humeur.</p>
+            <a class="btn btn-discord" href="https://discord.gg/rdB5KpcKCb" target="_blank" rel="noopener">Rejoindre le Discord</a>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div>
+            <h3>Installe le modpack</h3>
+            <p>Télécharge et installe le pack de mods pour pouvoir te connecter.</p>
+            <a class="btn btn-modpack" href="https://drive.google.com/file/d/1fpbuSKXzJvDKJlvEIvz1x9pvqVXylOdi/view?pli=1" target="_blank" rel="noopener">Télécharger le modpack</a>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <h3>Connecte-toi</h3>
+            <p>Lance Minecraft et ajoute l'adresse <code>KimoMinecraft.kinetichosting.gg</code> à tes serveurs.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
 
-1. *Bienvenue sur Valéa, un serveur moddé où le temps ralentit. Ici on construit sans pression, on explore en douceur et on partage de bons moments entre ami·e·s. Pose ton sac, on t'attendait.* (utilisée actuellement)
-2. *Valéa, c'est un serveur Minecraft moddé pensé pour souffler. Pas de compétition, pas de stress : juste des builds mignons, une communauté chaleureuse et des événements sans prise de tête.*
-3. *Sur Valéa, chaque connexion ressemble à une balade au coin du feu. Un monde moddé à explorer tranquillement, une communauté bienveillante, et l'envie simple de passer un bon moment ensemble.*
+    <section class="cta-final">
+      <span class="sparkle sparkle-left">✧</span>
+      <p>Rejoins l'aventure, pose-toi et profite ♡</p>
+      <span class="sparkle sparkle-right">✧</span>
+      <a class="btn btn-discord" href="https://discord.gg/rdB5KpcKCb" target="_blank" rel="noopener">Discord de Valéa</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Valéa — serveur Minecraft moddé · non affilié à Mojang/Microsoft</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
