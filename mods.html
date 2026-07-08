@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liste des mods — Valéa</title>
+<meta name="description" content="Liste complète des mods du modpack du serveur Minecraft Valéa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">Valéa <span>🌸</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Accueil</a>
+      <a href="mods.html" class="nav-link active">Mods</a>
+      <a href="https://discord.gg/rdB5KpcKCb" class="nav-link" target="_blank" rel="noopener">Discord</a>
+    </div>
+  </nav>
+
+  <header class="mods-hero">
+    <span class="eyebrow">✿ le modpack ✿</span>
+    <h1>Tous les mods de Valéa</h1>
+    <p class="mods-hero-sub">
+      <span id="mods-count">166</span> mods installés pour un monde plus doux, plus vivant et un peu plus mignon.
+    </p>
+    <a class="btn btn-modpack" href="https://drive.google.com/file/d/1fpbuSKXzJvDKJlvEIvz1x9pvqVXylOdi/view?pli=1" target="_blank" rel="noopener">Télécharger le modpack</a>
+  </header>
+
+  <main>
+    <section class="mods-section">
+      <div class="mods-search-row">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="mods-search" placeholder="Chercher un mod (ex: Sodium, Waystones...)" aria-label="Chercher un mod">
+      </div>
+      <p id="mods-empty" class="mods-empty" hidden>Aucun mod ne correspond à ta recherche ✿</p>
+      <ul class="mods-grid" id="mods-grid"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Valéa — serveur Minecraft moddé · non affilié à Mojang/Microsoft</p>
+  </footer>
+
+  <script src="mods.js"></script>
+</body>
+</html>
