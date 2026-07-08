@@ -38,33 +38,36 @@ h1, h2, h3, .section-title, .eyebrow {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  padding: 0.8rem 1.5rem;
-  background: rgba(253, 245, 236, 0.85);
+  padding: 1.1rem 2rem;
+  background: rgba(253, 245, 236, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 2px dashed var(--rose);
 }
 .nav-logo {
+  grid-column: 2;
+  justify-self: center;
   font-family: 'Baloo 2', cursive;
   font-weight: 700;
   color: var(--rose-deep);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
-.nav-links {
+.nav-side {
   display: flex;
-  gap: 1.2rem;
-  flex-wrap: wrap;
 }
+.nav-side.nav-left { justify-content: flex-start; }
+.nav-side.nav-right { justify-content: flex-end; }
 .nav-link {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.15rem;
   color: var(--cocoa-dark);
   text-decoration: none;
-  padding: 0.3rem 0.2rem;
+  padding: 0.4rem 0.3rem;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
@@ -72,6 +75,12 @@ h1, h2, h3, .section-title, .eyebrow {
 .nav-link.active {
   color: var(--rose-deep);
   border-color: var(--rose);
+}
+
+@media (max-width: 480px) {
+  .site-nav { padding: 0.9rem 1rem; }
+  .nav-logo { font-size: 1.35rem; }
+  .nav-link { font-size: 0.95rem; }
 }
 
 /* ---------- Section title swirl ---------- */
@@ -200,7 +209,7 @@ h1, h2, h3, .section-title, .eyebrow {
   width: 100%;
   display: block;
   object-fit: cover;
-  max-height: 46vh;
+  max-height: 62vh;
   object-position: center 32%;
 }
 
@@ -223,7 +232,7 @@ h1, h2, h3, .section-title, .eyebrow {
   0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
   10%  { opacity: 0.9; }
   90%  { opacity: 0.9; }
-  100% { transform: translateY(calc(46vh + 3rem)) rotate(240deg); opacity: 0; }
+  100% { transform: translateY(calc(62vh + 3rem)) rotate(240deg); opacity: 0; }
 }
 
 /* wavy divider between hero and content */
@@ -513,8 +522,8 @@ h1, h2, h3, .section-title, .eyebrow {
   .intro-text { font-size: 1.05rem; }
   .section-title { font-size: 1.5rem; }
   .sign { font-size: 1rem; }
-  .hero-img { max-height: 34vh; }
+  .hero-img { max-height: 42vh; }
   @keyframes fall {
-    100% { transform: translateY(calc(34vh + 3rem)) rotate(240deg); opacity: 0; }
+    100% { transform: translateY(calc(42vh + 3rem)) rotate(240deg); opacity: 0; }
   }
 }
