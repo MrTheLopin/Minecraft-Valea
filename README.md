@@ -4,19 +4,19 @@ Site vitrine statique (HTML/CSS/JS) pour le serveur Minecraft **Valéa**.
 
 ## Publier sur GitHub Pages
 
-1. Va sur ton dépôt : https://github.com/MrTheLopin/Miencraft-Valea
+1. Va sur ton dépôt : https://github.com/MrTheLopin/Minecraft-Valea
 2. Mets **tous** les fichiers et dossiers de ce dossier (`index.html`, `mods.html`, `style.css`, `mods.js`, `status.js`, `contact.js`, `assets/`, `.github/`, ce `README.md`) à la racine du dépôt.
    - En ligne de commande (voir plus bas) c'est plus simple pour que le dossier `.github` soit bien inclus (l'upload web cache parfois les dossiers commençant par un point).
 3. Dans le dépôt, va dans **Settings > Pages**.
 4. Sous **Build and deployment > Source**, choisis **Deploy from a branch**.
 5. Sous **Branch**, choisis `main` et le dossier `/ (root)`, puis **Save**.
-6. Le site sera en ligne à : **https://MrTheLopin.github.io/Miencraft-Valea/**
+6. Le site sera en ligne à : **https://MrTheLopin.github.io/Minecraft-Valea/**
 
 ### Publier en ligne de commande (Windows / Git Bash)
 ```bash
 cd chemin/vers/valea-site
 git init
-git remote add origin https://github.com/MrTheLopin/Miencraft-Valea.git
+git remote add origin https://github.com/MrTheLopin/Minecraft-Valea.git
 git add .
 git commit -m "Site Valéa"
 git branch -M main
