@@ -7,7 +7,7 @@
 // salon s'il inspecte le code. Si ça devient un problème, régénère le webhook
 // dans Discord (ça invalide l'ancienne URL) et envisage un petit relais côté
 // serveur (ex: Cloudflare Worker) pour cacher l'URL.
-const CONTACT_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1524884567524118680/gCSeLGCLrQ92SnOpgd1l7vEM-YMZdGhVg38gPFgkFPcWZwNBeIpTRLfAYYTylk5HsI0O';
+const CONTACT_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/1524903153659543714/EbfuFQHD7RCQxe28PAB85K_oLymYzqow98s2h8lpnki2fGDVMVpNtRGNbhSNqobHC0Bi';
 
 const form = document.getElementById('contact-form');
 const submitBtn = document.getElementById('contact-submit');
