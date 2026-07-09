@@ -1,0 +1,62 @@
+name: Statut du serveur Valéa
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'   # toutes les 10 minutes
+  workflow_dispatch:          # bouton "Run workflow" manuel dans l'onglet Actions
+
+permissions:
+  contents: write
+
+jobs:
+  check-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Interroger le statut du serveur
+        id: status
+        run: |
+          RESPONSE=$(curl -s "https://api.mcsrvstat.us/3/KimoMinecraft.kinetichosting.gg")
+          ONLINE=$(echo "$RESPONSE" | jq -r '.online')
+          PLAYERS=$(echo "$RESPONSE" | jq -r '.players.online // 0')
+          echo "online=$ONLINE" >> "$GITHUB_OUTPUT"
+          echo "players=$PLAYERS" >> "$GITHUB_OUTPUT"
+
+      - name: Lire le dernier statut connu
+        id: previous
+        run: |
+          if [ -f .github/data/server-status.json ]; then
+            PREV=$(jq -r '.online' .github/data/server-status.json)
+          else
+            PREV="unknown"
+          fi
+          echo "online=$PREV" >> "$GITHUB_OUTPUT"
+
+      - name: Notifier Discord si le statut a changé
+        if: steps.status.outputs.online != steps.previous.outputs.online
+        run: |
+          if [ "${{ steps.status.outputs.online }}" = "true" ]; then
+            TITLE="🟢 Le serveur Valéa est de retour en ligne"
+            COLOR=5763719
+          else
+            TITLE="🔴 Le serveur Valéa est hors ligne"
+            COLOR=15548997
+          fi
+          curl -s -H "Content-Type: application/json" -X POST \
+            -d "{\"embeds\":[{\"title\":\"$TITLE\",\"color\":$COLOR}]}" \
+            "${{ secrets.DISCORD_LOGS_WEBHOOK }}"
+
+      - name: Mettre à jour le fichier de statut
+        run: |
+          mkdir -p .github/data
+          echo "{\"online\": ${{ steps.status.outputs.online }}, \"checked_at\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > .github/data/server-status.json
+
+      - name: Commit du nouveau statut
+        run: |
+          git config user.name "valea-status-bot"
+          git config user.email "actions@github.com"
+          git add .github/data/server-status.json
+          git diff --quiet --cached || git commit -m "chore: mise à jour du statut serveur [skip announce]"
+          git push
