@@ -110,15 +110,18 @@
     </section>
 
     <section class="contact-section" aria-label="Contact et suggestions">
+      <span class="eyebrow">✿ boîte à mots doux ✿</span>
       <h2 class="section-title">Une question, une idée ?</h2>
       <div class="title-swirl" aria-hidden="true">⟡ ⟡ ⟡</div>
+      <p class="contact-lead">Un bug, une suggestion, ou juste envie de dire coucou ? Écris-nous, ça arrive direct sur notre Discord ♡</p>
+
       <form id="contact-form" class="contact-form">
         <div class="field-row">
-          <label for="c-name">Ton pseudo</label>
-          <input type="text" id="c-name" name="name" maxlength="60" required>
+          <label for="c-name">🌸 Ton pseudo</label>
+          <input type="text" id="c-name" name="name" placeholder="Comment on t'appelle ?" maxlength="60" required>
         </div>
         <div class="field-row">
-          <label for="c-type">Type de message</label>
+          <label for="c-type">🏷️ Type de message</label>
           <select id="c-type" name="type">
             <option value="Question">💬 Question</option>
             <option value="Suggestion">💡 Suggestion</option>
@@ -126,15 +129,15 @@
           </select>
         </div>
         <div class="field-row">
-          <label for="c-message">Message</label>
-          <textarea id="c-message" name="message" rows="4" maxlength="1000" required></textarea>
+          <label for="c-message">💌 Ton message</label>
+          <textarea id="c-message" name="message" rows="4" placeholder="Dis-nous tout..." maxlength="1000" required></textarea>
         </div>
         <!-- Honeypot anti-spam : caché pour les humains, souvent rempli par les bots -->
         <div class="field-row hp-field" aria-hidden="true">
           <label for="c-website">Ne pas remplir</label>
           <input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off">
         </div>
-        <button type="submit" class="btn btn-discord" id="contact-submit">Envoyer</button>
+        <button type="submit" class="btn btn-send" id="contact-submit">Envoyer avec amour <span aria-hidden="true">♡</span></button>
         <p class="contact-status" id="contact-status" role="status"></p>
       </form>
     </section>
